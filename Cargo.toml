@@ -1,0 +1,13 @@
+[package]
+name = "talk"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "client"
+
+[[bin]]
+name = "server"
+
+[dependencies]
+libc = "0.2.182"
