@@ -11,4 +11,4 @@ cargo run --bin server
 cargo run --bin client {server pid} {custom message}
 ```
 
-The server is currently unstable, it can only print less than 25 characters at once before the behavior becomes unpredictable. I'll try to find a fix for it at some point in the future.
+The server is currently unstable, it can only print up to 65 characters at once before the behavior becomes unpredictable. I'll try to find a fix for it at some point in the future.

@@ -11,12 +11,12 @@ pub fn strtobin(str: String) -> String {
     bin
 }
 
-pub fn bintochar(bin: String) -> Option<char> {
+pub fn bintochar(bin: [char; 8]) -> Option<char> {
     let mut byte: u8 = 0;
     let mut base: u8 = 1;
 
-    for bit in bin.chars().rev() {
-        if bit == '1' {
+    for bit in bin.iter().rev() {
+        if *bit == '1' {
             byte += base;
         }
         if base < 128 {

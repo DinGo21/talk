@@ -23,13 +23,14 @@ extern "C" fn sig_handler(signum: i32) {
 }
 
 fn run() {
+    let mut bin: [char; 8] = ['0'; 8];
+
     loop {
-        let mut bin = String::new();
-        for _ in 0..8 {
+        for i in &mut bin {
             let sig;
             let _ = sig::pause();
             unsafe {sig = SIG}
-            bin.push(sig::sigtobit(sig));
+            *i = sig::sigtobit(sig);
         }
         match bits::bintochar(bin) {
             Some(c) => print!("{c}"),
